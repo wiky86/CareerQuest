@@ -1,0 +1,30 @@
+
+> career-quest@0.1.0 build
+> next build
+
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\서지수\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\서지수\Desktop\DuoLike3\package-lock.json
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 9.5s
+  Running TypeScript ...
+Failed to compile.
+
+./src/app/study/page.tsx:48:86
+Type error: Property 'locked' does not exist on type '{ id: number; title: string; type: string; duration: string; completed: boolean; pages?: undefined; } | { id: number; title: string; type: string; pages: number; completed: boolean; duration?: undefined; } | { ...; } | { ...; } | { ...; } | { ...; }'.
+  Property 'locked' does not exist on type '{ id: number; title: string; type: string; duration: string; completed: boolean; pages?: undefined; }'.
+
+[0m [90m 46 |[39m                         [33m<[39m[33mdiv[39m className[33m=[39m{styles[33m.[39mcardList}[33m>[39m
+ [90m 47 |[39m                             {section[33m.[39mitems[33m.[39mmap((item) [33m=>[39m (
+[31m[1m>[22m[39m[90m 48 |[39m                                 [33m<[39m[33mdiv[39m key[33m=[39m{item[33m.[39mid} className[33m=[39m{[32m`${styles.card} ${item.locked ? styles.lockedCard : ''}`[39m}[33m>[39m
+ [90m    |[39m                                                                                      [31m[1m^[22m[39m
+ [90m 49 |[39m                                     [33m<[39m[33mdiv[39m className[33m=[39m{styles[33m.[39miconWrapper}[33m>[39m
+ [90m 50 |[39m                                         {item[33m.[39mlocked [33m?[39m [33m<[39m[33mLock[39m size[33m=[39m{[35m24[39m} [33m/[39m[33m>[39m [33m:[39m
+ [90m 51 |[39m                                             item[33m.[39mtype [33m===[39m [32m'video'[39m [33m?[39m [33m<[39m[33mPlayCircle[39m size[33m=[39m{[35m24[39m} [35m/> : <FileText size={24} /[39m[33m>[39m}[0m
+Next.js build worker exited with code: 1 and signal: null

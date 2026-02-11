@@ -12,6 +12,7 @@ interface GameState {
 }
 
 interface GameContextType extends GameState {
+    level: number;
     loseHeart: () => void;
     gainHeart: () => void;
     addXp: (amount: number) => void;
@@ -106,8 +107,11 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         checkStreak();
     }, []);
 
+    // Derive level from XP
+    const level = Math.floor(state.xp / 100) + 1;
+
     return (
-        <GameContext.Provider value={{ ...state, loseHeart, gainHeart, addXp, checkStreak, unlockLevel }}>
+        <GameContext.Provider value={{ ...state, level, loseHeart, gainHeart, addXp, checkStreak, unlockLevel }}>
             {children}
         </GameContext.Provider>
     );

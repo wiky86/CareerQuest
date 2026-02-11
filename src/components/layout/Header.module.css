@@ -26,6 +26,13 @@
     align-items: center;
 }
 
+.divider {
+    width: 1px;
+    height: 24px;
+    background-color: var(--border);
+    margin: 0 0.5rem;
+}
+
 .navItem {
     display: flex;
     align-items: center;
