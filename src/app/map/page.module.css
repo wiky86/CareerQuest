@@ -1,0 +1,101 @@
+.container {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-main);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+}
+
+.map {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    align-items: center;
+}
+
+/* Vertical line connecting nodes */
+.map::before {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    bottom: 2rem;
+    left: 50%;
+    width: 4px;
+    background: var(--border);
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.level {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.node {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: none;
+    background: var(--bg-card);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.node:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+.nodeActive {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 0 0 6px var(--primary-bg);
+}
+
+.nodeLocked {
+    background: var(--border);
+    cursor: not-allowed;
+    color: var(--text-muted);
+}
+
+.nodeIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.starRating {
+    display: flex;
+    gap: 2px;
+    margin-top: 5px;
+    color: var(--warning);
+}
+
+.levelTitle {
+    font-weight: 700;
+    background: var(--bg-card);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border);
+    font-size: 0.875rem;
+    color: var(--text-sub);
+}

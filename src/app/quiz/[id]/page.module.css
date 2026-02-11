@@ -1,0 +1,204 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.closeButton {
+    color: var(--text-muted);
+    padding: 0.5rem;
+}
+
+.progressBar {
+    flex: 1;
+    height: 12px;
+    background: var(--border);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: var(--success);
+    transition: width 0.3s ease;
+}
+
+.questionContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.question {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.option {
+    padding: 1.25rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-lg);
+    text-align: left;
+    font-size: 1.125rem;
+    color: var(--text-main);
+    background: var(--bg-card);
+    transition: all 0.2s ease;
+}
+
+.option:hover:not(:disabled) {
+    background: var(--bg-main);
+    transform: translateY(-2px);
+}
+
+.optionSelected {
+    border-color: var(--primary-light);
+    background: var(--primary-bg);
+    color: var(--primary-dark);
+}
+
+.optionCorrect {
+    border-color: var(--success);
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.optionWrong {
+    border-color: var(--error);
+    background: var(--error-bg);
+    color: var(--error);
+}
+
+.footer {
+    padding: 1.5rem 0;
+    border-top: 2px solid var(--border);
+}
+
+.feedback {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    animation: slideUp 0.3s ease;
+}
+
+.feedbackCorrect {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.feedbackWrong {
+    background: var(--error-bg);
+    color: var(--error);
+}
+
+.feedbackTitle {
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feedbackText {
+    color: var(--text-sub);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.checkButton {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+    background: var(--success);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 0 0 #059669;
+    /* 3D effect */
+    transition: all 0.1s;
+}
+
+.checkButton:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.checkButton:disabled {
+    background: var(--text-muted);
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.checkButtonWrong {
+    background: var(--error);
+    box-shadow: 0 4px 0 0 #B91C1C;
+}
+
+.resultContainer {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.resultTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--warning);
+    margin-bottom: 1rem;
+}
+
+.resultStats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.statValue {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.statLabel {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
